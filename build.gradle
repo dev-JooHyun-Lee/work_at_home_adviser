@@ -21,8 +21,9 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.6.7'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.7'
-    implementation 'org.springframework.boot:spring-boot-starter-security:2.6.7'
+    //implementation 'org.springframework.boot:spring-boot-starter-security:2.6.7'
     implementation 'org.springframework.boot:spring-boot-starter-webflux:2.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.7'
     compileOnly 'org.projectlombok:lombok:1.18.24'
     developmentOnly 'org.springframework.boot:spring-boot-devtools:2.6.7'
     runtimeOnly 'com.h2database:h2:2.1.212'
@@ -30,6 +31,9 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.7'
     testImplementation 'io.projectreactor:reactor-test:3.4.18'
     testImplementation 'org.springframework.security:spring-security-test:5.6.3'
+    //https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 }
 
 tasks.named('test') {
