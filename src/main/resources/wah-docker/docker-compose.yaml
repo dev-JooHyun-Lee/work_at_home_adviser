@@ -1,0 +1,15 @@
+version: '3'
+services:
+  cassandra:
+    image: cassandra:4.0.3
+    env_file:
+      - cassandra/cassandra.env
+    ports:
+      - "9042:9042"   # native protocol clients
+    volumes:
+      - ./cassandra/config/collectd.cassandra.conf:/etc/collectd/collectd.conf
+      #- ./cassandra/data:/var/lib/cassandra  # data 유지
+      - ./cassandra/initdb.d/:/docker-entrypoint-initdb.d/ # initdb 설정
+      - ./cassandra/entrypoint.sh:/entrypoint.sh
+    entrypoint:
+      - ./entrypoint.sh
